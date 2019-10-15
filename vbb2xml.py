@@ -120,7 +120,9 @@ def parse_anno_file(vbb_inputdir,vbb_outputdir):
                         if not folder:
                             os.mkdir(new_output_dir)
                             
-                        vbb_file_name = os.path.basename(vbb_file)
+                        vbb_name = os.path.split(vbb_file)[1]
+                        vbb_file_name = os.path.splitext(vbb_name)[0]
+                        
                         new_output_dir2 = os.path.join(new_output_dir,vbb_file_name)
                         folder2 = os.path.exists(new_output_dir2)
                         if not folder2:
